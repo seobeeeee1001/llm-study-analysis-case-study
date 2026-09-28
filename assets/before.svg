@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img" aria-labelledby="title description">
+  <title id="title">개선 전 분석 흐름</title>
+  <desc id="description">자료 업로드 뒤 HTTP 연결을 유지하며 전체 분석을 기다려야 학습을 시작할 수 있다. 연결이 끊기면 진행 상태를 잃고 다시 업로드한다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+    <marker id="failure-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#B45309"/></marker>
+  </defs>
+  <rect width="1000" height="310" rx="18" fill="#FFFFFF"/>
+  <text x="28" y="38" fill="#475569" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="17" font-weight="700">전체 응답을 기다리는 단일 요청</text>
+
+  <path d="M 200 116 H 240" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 470 116 H 510" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 740 116 H 780" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="25" y="75" width="175" height="82" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="112.5" y="123" text-anchor="middle" fill="#0F172A" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20" font-weight="700">자료 업로드</text>
+
+  <rect x="250" y="75" width="220" height="82" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="360" y="108" text-anchor="middle" fill="#0F172A" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="19" font-weight="700">HTTP 연결 유지</text>
+  <text x="360" y="136" text-anchor="middle" fill="#475569" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="17">LLM 분석 진행</text>
+
+  <rect x="520" y="75" width="220" height="82" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="630" y="108" text-anchor="middle" fill="#0F172A" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="19" font-weight="700">전체 응답 완료</text>
+  <text x="630" y="136" text-anchor="middle" fill="#475569" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="17">결과를 한 번에 받음</text>
+
+  <rect x="790" y="75" width="185" height="82" rx="14" fill="#E8F5EE" stroke="#90C8A3" stroke-width="2"/>
+  <text x="882.5" y="123" text-anchor="middle" fill="#135C33" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20" font-weight="700">학습 시작</text>
+
+  <path d="M 360 157 V 209" fill="none" stroke="#B45309" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#failure-arrow)"/>
+  <rect x="250" y="221" width="470" height="64" rx="14" fill="#FFF7ED" stroke="#F5C48A" stroke-width="2"/>
+  <text x="485" y="260" text-anchor="middle" fill="#92400E" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="18" font-weight="700">연결 종료·새로고침 → 진행 상태 확인 불가, 재업로드</text>
+</svg>
