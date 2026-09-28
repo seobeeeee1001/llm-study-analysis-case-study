@@ -1,0 +1,11 @@
+{
+  "name": "llm-study-analysis-case-study",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo.mjs"
+  }
+}
